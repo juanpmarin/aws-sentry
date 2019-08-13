@@ -1,6 +1,10 @@
+# alpine based
 FROM infrastructureascode/aws-cli:1.16.216
 
 LABEL maintainer="Juan Marín"
+
+RUN apk -v --update add curl && \
+    rm /var/cache/apk/*
 
 ENV SENTRY_CLI_LATEST_VERSION="1.47.1"
 
